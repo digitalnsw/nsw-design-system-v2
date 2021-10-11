@@ -2,6 +2,10 @@
 
 $content-width: 768px;
 
+:root {
+  --nsw-font-family: 'Public Sans', Arial, sans-serif;
+}
+
 .nsw-palette {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;

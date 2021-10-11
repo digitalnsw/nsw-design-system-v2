@@ -1,13 +1,13 @@
 .nsw-content-block {
-  @include font-stack;
+  font-family: var(--nsw-font-family);
   position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 
   &__title {
-    @include font-stack('heading');
     @include font-size('lg');
+    font-weight: var(--nsw-font-bold);
     margin: 0;
   }
 
@@ -26,7 +26,7 @@
     margin: rem(16px) 0 0 0;
 
     a {
-      font-weight: normal;
+      font-weight: var(--nsw-font-normal);
     }
   }
 
@@ -36,21 +36,23 @@
     list-style-type: none;
 
     li {
-      padding: rem(8px) 0 rem(8px) rem(18px);
+      padding: rem(8px) 0 rem(8px) rem(14px);
       position: relative;
 
       &::before {
-        content: '•';
+        content: '';
         position: absolute;
-        top: 0;
+        width: rem(4px);
+        height: rem(4px);
+        border-radius: 100%;
+        background-color: var(--nsw-text-dark);
+        top: rem(18px);
         left: 0;
-        font-size: rem(34px);
-        line-height: rem(34px);
       }
     }
 
     a {
-      font-weight: normal;
+      font-weight: var(--nsw-font-normal);
     }
   }
 

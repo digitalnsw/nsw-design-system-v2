@@ -1,8 +1,9 @@
 .nsw-button {
-  @include font-stack('heading');
   @include font-size('sm');
   @include nsw-spacing(margin, lg md none none);
-  @include border-radius;
+  border-radius: var(--nsw-border-radius);
+  font-family: var(--nsw-font-family);
+  font-weight: var(--nsw-font-bold);
   border: solid 2px transparent;
   white-space: normal;
   text-decoration: none;
@@ -30,19 +31,39 @@
     }
   }
 
-  &:active {
-    @include nsw-active;
-    border-color: $focus-color;
-  }
-
   &:disabled,
   &.disabled {
-    background-color: $light10;
-    color: $light40;
-    border-color: $light10;
+    opacity: 0.38;
     cursor: not-allowed;
   }
+
+  &--full-width {
+    display: block;
+    width: 100%;
+
+    @include breakpoint($desktop-breakpoint) {
+      display: inline-block;
+      width: auto;
+    }
+  }
+
+  .nsw-material-icons {
+    font-size: rem(24px);
+    line-height: rem(10px);
+    position: relative;
+    bottom: rem(-7px);
+
+    &:first-child {
+      margin-right: rem(8px);
+    }
+
+    &:last-child {
+      margin-left: rem(8px);
+    }
+  }
 }
+
+/* Legacy start */
 
 .nsw-button--block {
   display: block;
@@ -53,12 +74,4 @@
   }
 }
 
-.nsw-button--full-width {
-  display: block;
-  width: 100%;
-
-  @include breakpoint($desktop-breakpoint) {
-    display: inline-block;
-    width: auto;
-  }
-}
+/* Legacy end */

@@ -67,6 +67,16 @@ function buildStyles() {
     .pipe(dest(config.scss.build))
 }
 
+function buildDocStyles() {
+  return src(config.scssDocs.src)
+    .pipe(sourcemaps.init())
+    .pipe(sassGlob())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss(postcssProcessors))
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest(config.scssDocs.build))
+}
+
 function lintStyles() {
   return src(config.scss.watch)
     .pipe(gulpStylelint({
@@ -143,7 +153,7 @@ function metalsmithBuild(callback) {
     templates: {
       pattern: config.metalSmith.collection.templates.pattern,
       sortBy: sortByAlpha,
-    }
+    },
   }))
   metalsmith.use(dynamicCollections({
     componentsnav: {
@@ -158,6 +168,21 @@ function metalsmithBuild(callback) {
     },
     templatesnav: {
       pattern: config.metalSmith.collection.templatesnav.pattern,
+      refer: false,
+      sortBy: 'order',
+    },
+    guidancetab: {
+      pattern: config.metalSmith.collection.guidancetab.pattern,
+      refer: false,
+      sortBy: sortByAlpha,
+    },
+    design: {
+      pattern: config.metalSmith.collection.contentnav.design,
+      refer: false,
+      sortBy: 'order',
+    },
+    develop: {
+      pattern: config.metalSmith.collection.contentnav.develop,
       refer: false,
       sortBy: 'order',
     },
@@ -251,7 +276,7 @@ function injectSVG() {
     .pipe(dest(config.dir.build))
 }
 
-const styles = series(lintStyles, buildStyles)
+const styles = series(lintStyles, buildStyles, buildDocStyles)
 const javascript = series(lintJavascript, compileJS, compileDocsJS)
 
 function watchFiles(done) {

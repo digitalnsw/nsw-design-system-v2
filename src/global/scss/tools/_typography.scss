@@ -1,19 +1,21 @@
 // Font-size mixin - returns the font size for mobile and desktop based of the values in $font-sizes map
 @mixin font-size($size) {
-  @if $size != 'xs' and $size != 'sm' and $size != 'md' and $size != 'lg' and $size != 'xl' and $size != 'xxl' and $size != 'xxxl' {
+  @if $size != 'xxs' and $size != 'xs' and $size != 'sm' and $size != 'md' and $size != 'lg' and $size != 'xl' and $size != 'xxl' {
     @error 'NSW-DS font-size mixin allows the following values for $sizes: xs, sm, md, lg, xl, xxl, xxxl. You have used "#{$size}"';
   }
 
   @if $size {
-    font-size: get-font-size($size, 'mobile');
-    line-height: get-line-height($size, 'mobile');
+    font-size: var(--nsw-font-size-#{$size}-mobile);
+    line-height: var(--nsw-line-height-#{$size}-mobile);
 
     @include breakpoint($font-size-reponsive-breakpoint) {
-      font-size: get-font-size($size, 'desktop');
-      line-height: get-line-height($size, 'mobile');
+      font-size: var(--nsw-font-size-#{$size}-desktop);
+      line-height: var(--nsw-line-height-#{$size}-desktop);
     }
   }
 }
+
+/* Legacy start */
 
 // Font-stack mixin - returns the font stack also applies specific weighting if heading or not
 @mixin font-stack($weight: 'regular') {
@@ -66,25 +68,4 @@
   }
 }
 
-@mixin link() {
-  color: $nsw-primary-blue;
-  text-decoration: underline;
-  text-decoration-skip-ink: auto;
-
-  &:hover {
-    @include nsw-hover;
-    outline: 2px solid $hover-colour;
-  }
-
-  &:focus {
-    @include nsw-focus($offset: false);
-  }
-
-  &:visited {
-    color: $link-visited;
-  }
-
-  &:active {
-    @include nsw-active;
-  }
-}
+/* Legacy end */

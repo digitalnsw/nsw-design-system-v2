@@ -15,7 +15,7 @@
   *::before,
   *::after {
     background: transparent !important;
-    color: $black !important;
+    color: var(--nsw-black) !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -44,7 +44,7 @@
 
   pre,
   blockquote {
-    border: 1px solid $black;
+    border: 1px solid var(--nsw-black);
     page-break-inside: avoid;
   }
 

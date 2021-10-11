@@ -3,7 +3,6 @@ title: Content page - Form
 order: 23
 page: true
 model:
-  header: ../../components/header/json/header-premier-and-cabinet.json
   nav-basic: ../../components/main-navigation/json/main-navigation.json
   nav-mega: ../../components/main-navigation/json/mega-navigation.json
   breadcrumbs: ../../components/breadcrumbs/json/breadcrumbs.json
@@ -13,7 +12,8 @@ model:
   footer: ../../components/footer/json/footer.json
 ---
 
-{{>_header model.header}}
+{{>_masthead content="#content" nav="#main-navigation"}}
+{{>_header header-title="Premier & Cabinet"}}
 {{>_main-navigation model.nav-basic}}
 <div class="nsw-container nsw-p-bottom-xs">
   {{>_breadcrumbs model.breadcrumbs}}
@@ -71,7 +71,7 @@ model:
             label="Phone number (optional)"
           }}
         </div>
-        {{>_button-input type="submit" style="primary" text="Submit"}}
+        {{>_button-input type="submit" style="dark" text="Submit"}}
       </form>
     </main>
     <div class="nsw-page-layout__sidebar nsw-page-layout__sidebar--desktop">
@@ -79,7 +79,7 @@ model:
   </div>
 </div>
 
-<div class="nsw-section--light-10">
+<div class="nsw-section nsw-section--off-white">
   <div class="nsw-container">
     <div class="nsw-page-layout">
       <div class="nsw-page-layout__main">

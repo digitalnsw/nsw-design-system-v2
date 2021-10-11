@@ -1,18 +1,33 @@
-@mixin text-link {
-  @include font-stack('heading');
-  color: $link-color;
-  display: inline-block;
+@mixin link() {
+  color: var(--nsw-brand-dark);
+  text-decoration: underline;
+  text-decoration-skip-ink: auto;
 
   &:hover {
     @include nsw-hover;
-    outline: 2px solid $hover-colour;
+    outline: 2px solid var(--nsw-text-hover);
   }
 
   &:focus {
     @include nsw-focus($offset: false);
   }
 
-  &:active {
-    @include nsw-active;
+  &:visited {
+    color: var(--nsw-text-visited);
+  }
+}
+
+@mixin text-link {
+  font-weight: var(--nsw-font-bold);
+  color: var(--nsw-brand-dark);
+  display: inline-block;
+
+  &:hover {
+    @include nsw-hover;
+    outline: 2px solid var(--nsw-text-hover);
+  }
+
+  &:focus {
+    @include nsw-focus($offset: false);
   }
 }

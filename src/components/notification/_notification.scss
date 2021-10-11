@@ -1,6 +1,31 @@
+//Variations
+$nsw-notifications: (
+  info: (
+    border: var(--nsw-status-info),
+    background: var(--nsw-status-info-bg),
+    fill: var(--nsw-status-info),
+  ),
+  success: (
+    border: var(--nsw-status-success),
+    background: var(--nsw-status-success-bg),
+    fill: var(--nsw-status-success),
+  ),
+  warning: (
+    border: var(--nsw-status-warning),
+    background: var(--nsw-status-warning-bg),
+    fill: var(--nsw-status-warning),
+  ),
+  error: (
+    border: var(--nsw-status-error),
+    background: var(--nsw-status-error-bg),
+    fill: var(--nsw-status-error),
+  ),
+);
+
 .nsw-notification {
   @include component-spacing();
   @include nsw-spacing(padding, md);
+  font-family: var(--nsw-font-family);
   background: transparent;
   position: relative;
   border-left: solid 6px transparent;
@@ -36,8 +61,6 @@
   }
 
   &__content {
-    @include font-stack;
-
     p:not([class]) {
       @include nsw-spacing(margin, sm none none none);
     }
@@ -48,11 +71,11 @@
   }
 
   &__title {
-    @include font-stack('heading');
+    font-weight: var(--nsw-font-bold);
     margin: 0;
   }
 
-  @each $color, $variant in $notification {
+  @each $color, $variant in $nsw-notifications {
     &--#{"" + $color} {
       background-color: map-get($variant, background);
       border-color: map-get($variant, border);

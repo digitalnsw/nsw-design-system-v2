@@ -1,6 +1,9 @@
+$nsw-svg-light: #ffffff;
+$nsw-svg-dark: #333333;
+
 .nsw-form-label {
-  @include font-stack(heading);
   @include font-size('sm');
+  font-weight: var(--nsw-font-bold);
   display: block;
 
   &-small {
@@ -21,19 +24,19 @@
 .nsw-form-required {
   &::after {
     content: ' *';
-    color: $nsw-primary-highlight;
+    color: var(--nsw-status-error);
   }
 }
 
 .nsw-form-input,
 .nsw-form-select {
-  @include font-stack;
   @include font-size('sm');
   @include nsw-spacing(padding, sm md);
-  @include border-radius;
-  background-color: $white;
-  color: $dark80;
-  border: 1px solid $dark70;
+  border-radius: var(--nsw-border-radius);
+  font-family: var(--nsw-font-family);
+  background-color: var(--nsw-white);
+  color: var(--nsw-text-dark);
+  border: 1px solid var(--nsw-grey-01);
   vertical-align: middle;
   appearance: none;
   -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
@@ -48,20 +51,20 @@
   }
 
   &:disabled {
-    background-color: $light10;
-    border-color: $light40;
-    color: $light40;
+    background-color: var(--nsw-off-white);
+    border-color: var(--nsw-grey-03);
+    color: var(--nsw-grey-03);
     cursor: not-allowed;
   }
 
 
   &[aria-invalid='true'],
   &.has-error {
-    border-color: $critical;
+    border-color: var(--nsw-status-error);
     border-width: 2px;
 
     &:hover {
-      background-color: $critical-background;
+      background-color: var(--nsw-status-error-bg);
     }
   }
 }
@@ -92,18 +95,18 @@
 }
 
 .nsw-form-select {
-  @include background-svg(chevron-down, $nsw-primary-blue);
+  @include background-svg(chevron-down, $nsw-svg-dark);
   @include nsw-spacing(padding-right, xxl);
   background-repeat: no-repeat;
   background-position: right rem(16px) center;
   background-size: rem(16px) auto;
 
   &:disabled {
-    @include background-svg(chevron-down, $light40);
+    @include background-svg(chevron-down, $nsw-svg-dark);
   }
 
   option {
-    background-color: $white;
+    background-color: var(--nsw-white);
   }
 }
 
@@ -123,12 +126,12 @@
   }
 
   &:checked + .nsw-form-checkbox__label::after {
-    @include background-svg(tick, $white);
-    background-color: $nsw-primary-blue;
+    @include background-svg(tick, $nsw-svg-light);
+    background-color: var(--nsw-brand-dark);
   }
 
   &:checked + .nsw-form-radio__label::after {
-    background-color: $nsw-primary-blue;
+    background-color: var(--nsw-brand-dark);
   }
 
   &:disabled {
@@ -139,13 +142,13 @@
 
     + .nsw-form-checkbox__label::before,
     + .nsw-form-radio__label::before {
-      border-color: $light40;
-      background-color: $light10;
+      border-color: var(--nsw-grey-03);
+      background-color: var(--nsw-off-white);
     }
 
     &:checked + .nsw-form-checkbox__label::after,
     &:checked + .nsw-form-radio__label::after {
-      background-color: $light40;
+      background-color: var(--nsw-grey-03);
     }
   }
 
@@ -154,25 +157,24 @@
   }
 
   &:focus + .nsw-form-radio__label::before {
-    box-shadow: 0 0 0 3px $white, 0 0 0 6px $focus-color;
+    box-shadow: 0 0 0 3px var(--nsw-text-light), 0 0 0 6px var(--nsw-focus);
   }
 
   &[aria-invalid='true'] + .nsw-form-checkbox__label,
   &.has-error + .nsw-form-checkbox__label {
     &:hover::before {
-      background-color: $critical-background;
+      background-color: var(--nsw-status-error-bg);
     }
 
     &::before {
       border-width: 2px;
-      border-color: $critical;
+      border-color: var(--nsw-status-error);
     }
   }
 }
 
 .nsw-form-checkbox__label,
 .nsw-form-radio__label {
-  @include font-stack;
   @include font-size('sm');
   @include nsw-spacing(margin-top, md);
   @include nsw-spacing(padding-left, xxl);
@@ -187,14 +189,14 @@
     content: '';
     width: rem(32px);
     height: rem(32px);
-    border: 1px $dark70 solid;
-    background: $white;
+    border: 1px var(--nsw-grey-01) solid;
+    background-color: var(--nsw-white);
     top: 50%;
     margin-top: rem(-16px);
     left: 0;
     display: inline-block;
     vertical-align: middle;
-    background-color: $white;
+    background-color: var(--nsw-white);
     position: absolute;
   }
 
@@ -214,35 +216,33 @@
 
 .nsw-form-checkbox__label {
   &::before {
-    @include border-radius;
+    border-radius: var(--nsw-border-radius);
   }
 }
 
 .nsw-form-radio__label {
   &::before {
-    @include border-radius('round');
+    border-radius: 50%;
   }
 
   &::after {
-    @include border-radius('round');
+    border-radius: 50%;
   }
 }
 
 .nsw-form-helper {
-  @include font-stack;
   @include font-size('xs');
   display: block;
   margin-bottom: rem(4px);
 
   &--error {
-    @include font-stack(heading);
-    @include background-svg(error, $critical);
-    @include nsw-spacing(padding, xs md xs xl);
+    @include nsw-spacing(padding, xs);
     @include nsw-spacing(margin-top, xs);
+    font-weight: var(--nsw-font-bold);
     background-repeat: no-repeat;
     background-position: left rem(8px) center;
     background-size: 1rem auto;
-    background-color: $critical-background;
+    background-color: var(--nsw-status-error-bg);
   }
 }
 
@@ -260,12 +260,12 @@
   }
 
   &::after {
-    @include border-radius;
     @include z-index('below');
+    border-radius: var(--nsw-border-radius);
     content: none;
     width: calc(100% + 18px);
     height: 100%;
-    border: solid 2px $critical;
+    border: solid 2px var(--nsw-status-error);
     position: absolute;
     top: 0;
     left: -9px;
@@ -296,8 +296,8 @@
 }
 
 .nsw-form-legend-text {
-  @include font-stack(heading);
   @include font-size('lg');
+  font-weight: var(--nsw-font-bold);
   width: 100%;
   display: block;
 }
@@ -312,13 +312,12 @@
   position: relative;
 
   &__input {
-    @include font-stack;
     @include font-size('sm');
     @include nsw-spacing(padding, sm md);
-    @include border-radius;
-    background-color: $white;
-    color: $dark80;
-    border: 1px solid $dark70;
+    border-radius: var(--nsw-border-radius);
+    background-color: var(--nsw-white);
+    color: var(--nsw-text-dark);
+    border: 1px solid var(--nsw-grey-01);
     border-right: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -337,9 +336,9 @@
   }
 
   &__submit {
-    @include border-radius;
     @include nsw-spacing(padding, none sm);
-    border: 1px solid $dark70;
+    border-radius: var(--nsw-border-radius);
+    border: 1px solid var(--nsw-grey-01);
     border-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;

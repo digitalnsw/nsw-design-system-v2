@@ -3,14 +3,14 @@ title: Homepage - Featured list
 order: 12
 page: true
 model:
-  header: ../../components/header/json/header-customer-service.json
   nav: ../../components/main-navigation/json/main-navigation-customer-service.json
   banner: ../../components/banner/json/banner.json
   breadcrumbs: ../../components/breadcrumbs/json/breadcrumbs.json
   footer: ../../components/footer/json/footer.json
 ---
 
-{{>_header model.header}}
+{{>_masthead content="#content" nav="#main-navigation"}}
+{{>_header header-title="Department of Customer Service"}}
 {{>_main-navigation model.nav}}
 
 {{>_banner 
@@ -23,7 +23,7 @@ model:
 }}
 
 <main id="content">
-  <section class="nsw-section--white">
+  <section class="nsw-section">
     <div class="nsw-container">
       <div class="nsw-page-layout">
         <div class="nsw-page-layout__main">
@@ -55,7 +55,7 @@ model:
     </div>
   </section>
 
-  <section class="nsw-section--light-10">
+  <section class="nsw-section nsw-section--off-white">
     <div class="nsw-container">
       <div class="nsw-page-layout">
         <div class="nsw-page-layout__main">
@@ -115,7 +115,7 @@ model:
     </div>
   </section>
 
-  <section class="nsw-section--white">
+  <section class="nsw-section">
     <div class="nsw-container">
       <div class="nsw-page-layout">
         <div class="nsw-page-layout__main">

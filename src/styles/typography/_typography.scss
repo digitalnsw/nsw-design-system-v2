@@ -1,8 +1,19 @@
 .nsw-wysiwyg-content,
 .nsw-body-content {
-  @include font-stack;
   @include font-size('sm');
-  color: $dark80;
+  font-family: var(--nsw-font-family);
+  font-weight: var(--nsw-font-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--nsw-text-dark);
+
+  button,
+  input,
+  textarea,
+  textfield,
+  select {
+    font-family: var(--nsw-font-family);
+  }
 
   a:not([class]) {
     @include link;
@@ -48,13 +59,13 @@
   abbr,
   acronym {
     text-decoration: none;
-    border-bottom: 1px $nsw-primary-blue dashed;
+    border-bottom: 1px var(--nsw-brand-dark) dashed;
   }
 
   blockquote {
     @include font-size('lg');
-    @include nsw-spacing(margin-top, md);
-    border-left: solid 6px $nsw-primary-highlight;
+    @include nsw-spacing(margin, md none none none);
+    border-left: solid 6px var(--nsw-brand-accent);
     padding: rem(20px) rem(24px);
 
     @include breakpoint('md') {
@@ -78,7 +89,7 @@
   hr {
     border: 0;
     height: 1px;
-    background-color: $light20;
+    background-color: var(--nsw-grey-04);
     margin: rem(16) 0;
   }
 
@@ -89,20 +100,20 @@
   h5,
   h6 {
     &:not([class]) {
-      @include font-stack('heading');
+      font-weight: var(--nsw-font-bold);
       margin: 0;
     }
   }
 
   h1 {
     &:not([class]) {
-      @include font-size('xxxl');
+      @include font-size('xxl');
     }
   }
 
   h2 {
     &:not([class]) {
-      @include font-size('xxl');
+      @include font-size('xl');
     }
   }
 
@@ -157,8 +168,102 @@
   }
 }
 
+.nsw-h1,
+.nsw-h2,
+.nsw-h3,
+.nsw-h4,
+.nsw-h5,
+.nsw-h6 {
+  font-weight: var(--nsw-font-bold);
+  margin: 0;
+}
+
+.nsw-h1 {
+  @include font-size('xxl');
+}
+
+.nsw-h2 {
+  @include font-size('xl');
+}
+
+.nsw-h3 {
+  @include font-size('lg');
+}
+
+.nsw-h4 {
+  @include font-size('md');
+}
+
+.nsw-h5,
+.nsw-h6 {
+  @include font-size('sm');
+}
+
+* + .nsw-h1 {
+  @include nsw-spacing(margin-top, xxxl);
+}
+
+* + .nsw-h2 {
+  @include nsw-spacing(margin-top, xxl);
+}
+
+* + .nsw-h3 {
+  @include nsw-spacing(margin-top, xl);
+}
+
+* + .nsw-h4,
+* + .nsw-h5,
+* + .nsw-h6 {
+  @include nsw-spacing(margin-top, lg);
+}
+
+
+.nsw-link {
+  @include link;
+
+  &--icon {
+    display: inline-block;
+    font-weight: var(--nsw-font-bold);
+
+    .nsw-material-icons,
+    svg {
+      font-size: rem(20px);
+      line-height: rem(10px);
+      position: relative;
+      bottom: rem(-5px);
+
+      &:first-child {
+        margin-right: rem(4px);
+      }
+
+      &:last-child {
+        margin-left: rem(4px);
+      }
+    }
+  }
+}
+
 .nsw-text-link {
   @include text-link;
+}
+
+.nsw-icon-link {
+  @include text-link;
+
+  > span {
+    display: flex;
+    align-items: center;
+  }
+
+  svg {
+    &:first-child {
+      margin-right: rem(8px);
+    }
+  }
+
+  + .nsw-icon-link {
+    margin-left: rem(16);
+  }
 }
 
 h1,
@@ -166,7 +271,8 @@ h2,
 h3,
 h4 {
   &.nsw-section-title {
-    @include font-stack('heading');
+    font-family: var(--nsw-font-family);
+    font-weight: var(--nsw-font-bold);
     margin: 0;
     padding-top: rem($grid-gutters);
     padding-bottom: rem(8px);
@@ -179,13 +285,13 @@ h4 {
 
 h1 {
   &.nsw-section-title {
-    @include font-size('xxxl');
+    @include font-size('xxl');
   }
 }
 
 h2 {
   &.nsw-section-title {
-    @include font-size('xxl');
+    @include font-size('xl');
   }
 }
 
@@ -204,7 +310,7 @@ h4 {
 .nsw-section-separator {    
   border: 0;
   height: 1px;
-  background-color: $light20;
+  background-color: var(--nsw-grey-04);
   margin: rem(32) 0;
 
   @include breakpoint('md') {

@@ -11,7 +11,7 @@ order: 3
 <p>Use the new <a href="/components/header/index.html">header</a> component according to your brand level. There are 2 header components – masterbrand and co-brand.</p>
 
 <h3>2. Replace hex colours</h3>
-<p>A few of the colour swatches have been updated for the new branding. The code snippets below demonstrate the list SASS variables the were updated</p>
+<p>A few of the colour swatches have been updated for the new branding. The code snippets below demonstrate the list SASS variables that were updated to CSS variables</p>
 <div class="nsw-grid">
   <div class="nsw-col nsw-col-sm-6">
     <p>Old</p>
@@ -32,15 +32,15 @@ $white: #ffffff !default;
     <p>New</p>
 {{#>_docs-example hidden="true" open="true" code="language-scss"}}
 // Shades
-$black: #000000 !default;
-$dark80: #22272B !default;
-$dark70: #495054 !default;
-$dark60: #495054 !default;
+$black: var(--nsw-black) !default;
+$dark80: var(--nsw-grey-01) !default;
+$dark70: var(--nsw-grey-02) !default;
+$dark60: var(--nsw-grey-02) !default;
 
-$light40: #C0C6C9 !default;
-$light20: #EBEBEB !default;
-$light10: #F2F2F2 !default;
-$white: #FFFFFF !default;
+$light40: var(--nsw-grey-03) !default;
+$light20: var(--nsw-grey-04) !default;
+$light10: var(--nsw-off-white) !default;
+$white: var(--nsw-white) !default;
 {{/_docs-example}}
   </div>
 </div>

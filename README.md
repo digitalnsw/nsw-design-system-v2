@@ -1,12 +1,14 @@
 # NSW Design System
 
-[![npm version](https://badge.fury.io/js/nsw-design-system.svg)](https://badge.fury.io/js/nsw-design-system)
 [![](https://data.jsdelivr.com/v1/package/npm/nsw-design-system/badge)](https://www.jsdelivr.com/package/npm/nsw-design-system)
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/b183fe4d/nsw-design-system)
+
+> You are looking at an old version (<2.14.0) of the design system. There is a new version 3 [here](https://github.com/digitalnsw/nsw-design-system). 
 
 NSW Design system is a collection of reusable UI components used on the NSW government websites.
 
 See live examples of NSW Digital Design system components and guidance on how to use them on you website at [NSW Design System](https://nswdesignsystem.surge.sh).
+
 
 ## Using the design system
 
@@ -27,7 +29,7 @@ How you use the NSW Design System depends on your team's capabilities. We recomm
 2.  Generate a `package.json` file using the `npm init` command in the terminal. You will be prompted to enter several pieces of information, like the name of your application, version, description etc.
     
 4.  Add  `nsw-design-system`  to your project’s  `package.json`:
-    - `npm install --save nsw-design-system`
+    - `npm install --save nsw-design-system@2`
 
 The NSW Design System is now installed as a dependancy of your project, check out how to [import styles](#importing-styles-into-your-project) and [javascript](#importing-javascript-into-your-project) in to your project build.
 

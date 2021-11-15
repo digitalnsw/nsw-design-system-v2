@@ -108,6 +108,7 @@
 
   &__name {
     padding: rem(12px) 0;
+    color: var(--nsw-brand-dark);
 
     @include breakpoint('lg') {
       padding: 0;
@@ -118,10 +119,12 @@
   &__title {
     @include font-size('lg');
     font-weight: var(--nsw-font-bold);
+    color: var(--nsw-brand-dark);
   }
 
   &__description {
     @include font-size('xs');
+    color: var(--nsw-brand-dark);
   }
 
   &__logo {

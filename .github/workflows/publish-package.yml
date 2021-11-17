@@ -9,6 +9,10 @@ on:
         description: 'major, minor or patch'
         required: true
         default: 'patch'
+      version:
+        description: 'tag for NPM'
+        required: true
+        default: 'latest-v2'
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
@@ -26,6 +30,6 @@ jobs:
           npm run release:${{ github.event.inputs.semver }}
           git config --global user.name ${{ github.actor }}
           npm run commit && npm run git-tag
-      - run: npm publish --access public
+      - run: npm publish --tag ${{ github.event.inputs.version }} --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

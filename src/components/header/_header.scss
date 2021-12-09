@@ -79,6 +79,14 @@
       @include breakpoint('lg') {
         height: rem(76px);
       }
+
+      &.nsw-header__waratah-gov {
+        height: rem(55px);
+
+        @include breakpoint('lg') {
+          height: rem(76px);
+        }
+      }
     }
   }
 
@@ -102,6 +110,22 @@
 
       @include breakpoint('lg') {
         margin-left: rem(48px);
+      }
+    }
+  }
+  
+  &__waratah-gov {
+    margin-bottom: rem(-7px);
+
+    @include breakpoint('lg') {
+      margin-bottom: 0;
+    }
+
+    .hide {
+      display: none;
+
+      @include breakpoint('lg') {
+        display: inline;
       }
     }
   }

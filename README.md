@@ -1,25 +1,27 @@
-# NSW Design System
 
-[![](https://data.jsdelivr.com/v1/package/npm/nsw-design-system/badge)](https://www.jsdelivr.com/package/npm/nsw-design-system)
-[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/b183fe4d/nsw-design-system)
+> [!IMPORTANT]
+> You are looking at an old version (<2.14.0) of the NSW Design System. [There is a newer version of the NSW Design System](https://github.com/digitalnsw/nsw-design-system)
 
-> You are looking at an old version (<2.14.0) of the design system. There is a new version 3 [here](https://github.com/digitalnsw/nsw-design-system). 
+# NSW Design System V2.14.0 Archive
 
-NSW Design system is a collection of reusable UI components used on the NSW government websites.
+> [!NOTE]
+> This repository has been archived by the NSW Design System team on Aug 23, 2023, and is now in a read-only state. While no further updates or contributions will be accepted, the existing content remains available for reference.
+>
+> If you are maintaining a legacy version take a look at the components and guidance offered by the [NSW Design System V2 documentation site](https://nswdesignsystem.surge.sh).
+> 
+> Feel free to explore the repository to access historical information and resources. While it won't receive any new updates, you can still review the codebase and discussions that took place in the past.
+> 
+> If you have questions related to the repository's content or its context, please consult the available documentation or use the issue tracker for assistance. This repository's content can serve as a resource for learning and inspiration for future projects. Thank you for your interest in this repository, and we hope it continues to be a useful resource for the development community.
 
-See live examples of NSW Digital Design system components and guidance on how to use them on you website at [NSW Design System](https://nswdesignsystem.surge.sh).
 
+## Using the NSW Design System V2
 
-## Using the design system
-
-How you use the NSW Design System depends on your team's capabilities. We recommend using `npm` but also provided in a CDN, and a downloadable starter kit which includes all the compiled assets.
+How you use the NSW Design System V2 depends on your team's capabilities. We recommend using `npm` but also provided in a CDN, and a downloadable starter kit which includes all the compiled assets.
 
  1. [Installing with NPM](#installing-with-npm)
- 2. [Import styles](#importing-all-styles)
  3. [Adding the font and icons](#adding-the-font-and-the-icons)
  4. [Importing javascript into your project](#importing-javascript-into-your-project)
  5. [Using JSDelivr CDN](#using-jsdelivr-cdn)
- 6. [Download starter kit](#download-starter-kit)
  
 ### Installing with NPM
 1.  Install  `Node/npm`. 
@@ -33,8 +35,7 @@ How you use the NSW Design System depends on your team's capabilities. We recomm
 
 The NSW Design System is now installed as a dependancy of your project, check out how to [import styles](#importing-styles-into-your-project) and [javascript](#importing-javascript-into-your-project) in to your project build.
 
-
-### Option 1: Import all styles
+### Option 1: Importing all styles
 The NSW Design System styles need to be added to the main Sass file in your project.  
 Use the below snippet to import the NSW Design System (ideally placed before any other imports or sass):
 ```
@@ -108,15 +109,3 @@ You can add the files to your main html document
   </body>
 </html>
 ```
-
-### Download starter kit
-You can download the compiled design system assets (HTML, CSS, JavaScript) in the [HTMLStarterkit zip file](https://github.com/digitalnsw/nsw-design-system/blob/master/HTMLstarterkit.zip) from the latest release.
-
-
-## Design System Figma UI kit
-Get access to the latest Design System UI patterns and styles via the [Design System Figma UI kit](https://www.digital.nsw.gov.au/design-system/getting-started/design-system-figma-ui-kit).
-
-
-## Getting updates
-
-To be notified when there’s a new release, you can either join the [NSW Design System community](https://community.digital.nsw.gov.au/) or [watch the NSW Design System Github](https://github.com/digitalnsw/nsw-design-system)
